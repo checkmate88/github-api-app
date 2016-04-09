@@ -1,0 +1,222 @@
+// Color variables
+@color0: #289bc8; // light blue
+@color1: #ffffff; // white
+@color2: #0f5f87; // dark blue
+@color3: #e64b6e; // red for errors and warnings
+@color4: #f0f0f0; // light grey background
+
+
+// Width variables
+@width-min: 360px; // min width
+@width-100: 100%; // width 100%
+
+// Height variables
+@height-min: 150px; // min height
+@height-100: 100%; // height 100%
+
+// Reset CSS
+html,body,body div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,figure,footer,header,menu,nav,section,time,mark,audio,video,details,summary  {
+    background: transparent;
+    border: 0;
+    font-size: 100%;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+article,aside,figure,footer,header,nav,section,details,summary,label  {
+    display: block;
+}
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// Main styles
+
+html {
+    color: #5b5b5b;
+    font-family: "Open Sans", sans-serif;
+    height: @height-100;
+    overflow-y: scroll;
+    width: @width-100;
+}
+body {
+    background-color: #FDFDFD;
+    left: 50%;
+    min-height: @height-100;
+    padding: 1.875em;
+    position: relative;
+    transform: translate(-50%, 0);
+}
+
+section {
+    margin-top: .875em;
+    opacity: 1;
+    overflow: hidden;
+    padding: 0 2em;
+    position: relative;
+    transform: translate(0, 0);
+    z-index: 2;
+}
+
+p {
+    color: #5f6973;
+    font-size: 1em;
+    line-height: 1.625em;
+    margin-bottom: 1.2em;
+}
+
+ul {
+    float: left;
+    list-style: none;
+    list-style: none;
+    margin: 1em 0 0;
+    min-width: @width-min;
+    padding: 0;
+    width: 60%;
+    width: @width-100;
+    li {
+        margin: 0em;
+        padding: 0 0 .05em;
+        position: relative;
+    }
+}
+h1 {
+    color: @color2;
+    font-size: 1.4em;
+    font-weight: 400;
+    padding: 0.6em 0;
+}
+h2 {
+    color: @color0;
+    display: block;
+    font-size: 1.3em;
+    font-weight: 600;
+    line-height: 2.2em;
+    margin: 0;
+}
+h3 {
+    color: @color3;
+    font-size: 1em;
+    font-weight: 600;
+}
+h4 {
+    color: @color3;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+a {
+    &:link {
+        color: @color2;
+        text-decoration: underline;
+    }
+    &:visited {
+        color: @color2;
+        text-decoration: underline;
+    }
+    &:hover {
+        color: @color0;
+        text-decoration: none;
+    }
+}
+
+//  Main content area
+#content-wrap {
+    background-color: @color4;
+    float: left;
+    margin-bottom: 1, 5em;
+    min-height: @height-min;
+    padding: 1em 1.8em;
+    width: 68%;
+    p {
+        font-size: 0.9em;
+        font-style: italic;
+    }
+}
+.form-input {
+    background-color: @color1;
+    border-radius: 2px;
+    border: 1px solid #e6e6e6;
+    box-sizing: border-box;
+    color: #788791;
+    display: inline-block;
+    font-size: 1.2em;
+    height: 2.1em;
+    line-height: 1.5em;
+    margin-right: 1em;
+    text-indent: 0.5em;
+    width: 25em;
+    &:hover {
+        border: 1px solid @color0;
+    }
+}
+.button {
+    background-color: @color2;
+    background: linear-gradient(to bottom, @color0 0, #248ab2 100%);
+    border-radius: 2px;
+    border: none;
+    color: @color1;
+    color: @color1;
+    font-size: .9em;
+    letter-spacing: 1px;
+    margin: 1em 0;
+    padding: .7em 1em .5em;
+    text-shadow: none;
+    text-transform: uppercase;
+    &:hover {
+        background: @color0;
+        cursor: pointer;
+    }
+}
+#output {
+    ol {
+        font-size: 1.4em;
+        margin-left: 1em;
+    }
+}
+
+// The box for tests output
+#result-wrap {
+    background: @color4;
+    float: right;
+    margin-left: 0.3em;
+    min-height: @height-min;
+    min-width: @width-min;
+    overflow: auto;
+    padding-bottom: 1.6em;
+    padding-top: 1.4em;
+    width: 30%;
+}
+#result-wrap>h2 {
+    border-bottom: 2px solid;
+    margin: 0 0 1em 0;
+}
+
+// Reinicialize standard Mocha styles
+#mocha {
+    margin: 0 !important;
+    h2 {
+        font-size: 16px !important;
+    }
+}
+#mocha-stats {
+    font-size: 17px !important;
+    position: inherit !important;
+    right: 0px !important;
+    top: 0px !important;
+}
+
+// Breakpoint, change to one-column view
+@media (max-width: 1230px) {
+    #result-wrap,
+    #content-wrap,
+    ul {
+        width: @width-100;
+        float: none;
+    }
+}
